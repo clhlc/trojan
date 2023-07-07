@@ -30,6 +30,8 @@ jobs:
         sudo cp /usr/lib/systemd/system/trojan.service ./trogan-arm/trojan.service
         tar -czf trogan-arm.tar.gz trogan-arm
         ls
+        echo '====='
+        ls trogan-arm
     # - name: Create Release
     #   id: create_release
     #   uses: actions/create-release@v1
