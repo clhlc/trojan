@@ -16,7 +16,7 @@ jobs:
         echo "Running on ${{ matrix.architecture }}"
     - name: build
       run: |
-        apt -y install build-essential cmake libboost-system-dev libboost-program-options-dev libssl-dev default-libmysqlclient-dev -yqq
+        sudo apt -y install build-essential cmake libboost-system-dev libboost-program-options-dev libssl-dev default-libmysqlclient-dev -yqq
         cd trojan/
         mkdir build
         cd build/
