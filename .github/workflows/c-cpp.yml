@@ -17,11 +17,9 @@ jobs:
     - name: build
       run: |
         sudo apt -y install build-essential cmake libboost-system-dev libboost-program-options-dev libssl-dev default-libmysqlclient-dev -yqq
-        pwd;ls
-        # cd trojan/
-        # mkdir build
-        # cd build/
-        # cmake ..
-        # make
-        # ctest
-        # sudo make install
+        mkdir build
+        cd build/
+        cmake ..
+        make
+        ctest
+        sudo make install
