@@ -1,0 +1,17 @@
+name: ARM Workflow
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        architecture: [arm64]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Build and test
+      run: |
+        echo "Running on ${{ matrix.architecture }}"
+        
