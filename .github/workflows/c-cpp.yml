@@ -23,15 +23,15 @@ jobs:
         make
         ctest
         sudo make install
-        mkdir trogan-arm
-        sudo cp /usr/local/bin/trojan ./trogan-arm/trojan
-        sudo cp /usr/local/etc/trojan/config.json ./trogan-arm/config.json
-        sudo cp -r /usr/local/share/doc ./trogan-arm/
-        sudo cp /usr/lib/systemd/system/trojan.service ./trogan-arm/trojan.service
-        tar -czf trogan-arm.tar.gz trogan-arm
+        mkdir trojan-arm
+        sudo cp /usr/local/bin/trojan ./trojan-arm/trojan
+        sudo cp /usr/local/etc/trojan/config.json ./trojan-arm/config.json
+        sudo cp -r /usr/local/share/doc ./trojan-arm/
+        sudo cp /usr/lib/systemd/system/trojan.service ./trojan-arm/trojan.service
+        tar -czf trojan-arm.tar.gz trojan-arm
         ls
         echo '====='
-        ls trogan-arm
+        ls trojan-arm
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -50,6 +50,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/trogan-arm.tar.gz
-        asset_name: trogan-arm.tar.gz
+        asset_path: ./build/trojan-arm.tar.gz
+        asset_name: trojan-arm.tar.gz
         asset_content_type: application/gzip
